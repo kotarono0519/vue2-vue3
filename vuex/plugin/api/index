@@ -1,0 +1,1 @@
+fetchToken: () => instance.get("/staff")

@@ -3,11 +3,11 @@
       <div>
         <p>dataCount {{ dataCount }}</p>
         <p>computedCount {{ computedCount }}</p>
+        {{ hello }}
         <p>watchText {{ watchText }}</p>
       </div>
     </div>
   </template>
-  
   <script>
   // Options API と呼ばれる
   export default {
@@ -22,8 +22,13 @@
     // 自動計算される computed
     computed: {
       computedCount() {
+        // this.dataCount += 1
+        this.firstFunction()
         return this.dataCount + 10
       },
+      hello() {
+        return this.computedCount + 10
+      }
     },
   
     // 値が変動したら動作する watch
@@ -35,7 +40,7 @@
   
     // 画面初期表示時のみ動作 mounted
     mounted() {
-      // this.dataCount = 15
+    //  this.dataCount = 15
     },
   
     // 関数を格納 methods
